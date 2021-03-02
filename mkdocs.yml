@@ -14,3 +14,4 @@ extra_css:
 nav:
   - Início: index.md
   - Ambiete de desenvolvimento: ambiente.md
+  - Algoritmo gerador de árvore: gerador.md
