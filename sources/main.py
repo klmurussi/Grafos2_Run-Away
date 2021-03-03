@@ -1,6 +1,6 @@
 import pygame as pg
 import sys
-from tools import Images, Settings, Background
+from tools import Images, Settings, Sprites, CreateGraph
 
 pg.init()
 pg.mouse.set_visible(1)
@@ -8,6 +8,8 @@ pg.display.set_icon(Images.icon)
 pg.display.set_caption(Settings.TITLE)
 screen = pg.display.set_mode((Settings.windowSizeX, Settings.windowSizeY))
 clock = pg.time.Clock()
+
+nodes = CreateGraph.nodes()
 
 while True:
 	screen.fill(Settings.WHITE)
@@ -22,6 +24,9 @@ while True:
 			x = x + 30
 		x = 0
 		y = y + 30
+
+	Sprites.all_sprites_list.draw(screen)
+
 	pg.display.update()
 	for event in pg.event.get():
 		if event.type == pg.QUIT:

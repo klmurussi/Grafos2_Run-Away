@@ -1,18 +1,14 @@
-# from classes import Node
-from typing import Counter
-import Node
-#import random
-
-# random.seed(413215412321)
-
+from classes import Node, Connection
+import random
+from tools import Sprites
 
 class Graph:
     def __init__(self):
         self.graph = {}
         self.weights = {}
 
-    def add_node(self, num):
-        empty_node = Node.Node(num)
+    def add_node(self, num, x, y):
+        empty_node = Node.Node(num, x, y)
         self.graph[empty_node] = []
         return empty_node
 
@@ -23,9 +19,11 @@ class Graph:
         self.graph[dest].append(src)
         self.weights[(src.num, dest.num)] = weight
         self.weights[(dest.num, src.num)] = weight
+        edge = Connection.Connection(src, dest)
 
 
-""" graph = Graph()
+
+"""graph = Graph()
 nodeList = []
 
 for i in range(10):
@@ -40,5 +38,5 @@ for i in graph.graph:
     print("node: " + str(i.num) + " Edges:")
     for j in graph.graph[i]:
         print("vizinho: " + str(j.num) + " peso: " +
-              str(graph.weights[(i.num, j.num)]))
- """
+              str(graph.weights[(i.num, j.num)]))"""
+ 
