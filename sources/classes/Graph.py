@@ -2,6 +2,7 @@ from classes import Node, Connection
 import random
 from tools import Sprites
 
+
 class Graph:
     def __init__(self):
         self.graph = {}
@@ -19,8 +20,8 @@ class Graph:
         self.graph[dest].append(src)
         self.weights[(src.num, dest.num)] = weight
         self.weights[(dest.num, src.num)] = weight
-        edge = Connection.Connection(src, dest)
-
+        edge = Connection.Connection(
+            (src.rect.x+16, src.rect.y+16), (dest.rect.x+16, dest.rect.y+16))
 
 
 """graph = Graph()
@@ -39,4 +40,3 @@ for i in graph.graph:
     for j in graph.graph[i]:
         print("vizinho: " + str(j.num) + " peso: " +
               str(graph.weights[(i.num, j.num)]))"""
- 
