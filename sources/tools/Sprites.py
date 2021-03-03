@@ -1,5 +1,5 @@
-import pygame
+import pygame as pg
 
-node_list = pygame.sprite.Group()
-all_sprites_list = pygame.sprite.Group()
+node_list = pg.sprite.Group()
+all_sprites_list = pg.sprite.Group()
 line_list = []

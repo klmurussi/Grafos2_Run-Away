@@ -17,9 +17,11 @@ while True:
 	y = 0
 	for i in range (20):
 		for j in range (27):
-			if i > 17 and j > 23:
+			if i == 0 and j == 0:
+				screen.blit(Images.initial, (x, y))
+			elif i > 17 and j > 23:
 				screen.blit(Images.city, (x, y))
-			else:
+			elif i > 3 or j > 2:
 				screen.blit(Images.tree, (x, y))
 			x = x + 30
 		x = 0
