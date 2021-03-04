@@ -1,4 +1,3 @@
-from typing import Set
 import pygame as pg
 import sys
 from tools import Images, Settings, Sprites, CreateGraph, CreateEdges
@@ -14,6 +13,9 @@ clock = pg.time.Clock()
 graph = Graph.Graph()
 nodes = CreateGraph.nodes(graph)
 CreateEdges.edges(graph)
+pg.font.init() # you have to call this at the start, 
+                   # if you want to use this module.
+myfont = pg.font.SysFont('Comic Sans MS', 30)
 
 for i in Sprites.line_list:
     print(i[0])
@@ -36,9 +38,31 @@ while True:
         x = 0
         y = y + 30
 
-    Sprites.all_sprites_list.draw(screen)
     for i in Sprites.line_list:
+        if i[0][0] < i[1][0]:
+            xMenor = i[0][0]
+            xMaior = i[1][0]
+        else:
+            xMenor = i[1][0]
+            xMaior = i[0][0]
+
+        if i[0][1] < i[1][1]:
+            yMenor = i[0][1]
+            yMaior = i[1][1]
+        else:
+            yMenor = i[1][1]
+            yMaior = i[0][1]
+
+
         pg.draw.line(screen, Settings.BLACK, i[0], i[1])
+        text = str(i[2])
+        textsurface = myfont.render(text, False, (0, 0, 0))
+        posX =  ((xMaior - xMenor)/2) + xMenor 
+        posY =  ((yMaior - yMenor)/2) + yMenor
+        screen.blit(textsurface, (posX, posY))
+        print (text)
+
+    Sprites.all_sprites_list.draw(screen)
 
     pg.display.update()
     for event in pg.event.get():

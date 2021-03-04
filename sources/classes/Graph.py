@@ -21,7 +21,7 @@ class Graph:
         self.weights[(src.num, dest.num)] = weight
         self.weights[(dest.num, src.num)] = weight
         edge = Connection.Connection(
-            (src.rect.x+16, src.rect.y+16), (dest.rect.x+16, dest.rect.y+16))
+            (src.rect.x+16, src.rect.y+16), (dest.rect.x+16, dest.rect.y+16), weight)
 
 
 """graph = Graph()
