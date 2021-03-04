@@ -11,8 +11,8 @@ def nodes(graph):
     #number = 39
     print(number)
     num = 1
-    graph.add_node(0, 45, 80)
-    graph.add_node(21, 710, 540)
+    start = graph.add_node(0, 45, 80)
+    end = graph.add_node(21, 710, 540)
     while True:
         x = 0
         y = 0
@@ -30,7 +30,7 @@ def nodes(graph):
                         num = num + 1
                         listPOS.append((x, y))
                         if num == number+1:
-                            return
+                            return ((start, end))
                 x = x + 50
             x = 0
             y = y + 50

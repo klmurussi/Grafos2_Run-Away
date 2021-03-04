@@ -13,6 +13,7 @@ O projeto foi criado em um ambiente de desenvolvimento linux utilizando a IDE [V
 3. Após obter o pip3, basta utilizar o pip3 pela linha de comando para obter a biblioteca pygame
   ```
   pip3 install pygame
+  pip3 install pythonds
   ```
 
 4. Caso esteja utilizando o VSCode, é necessário instalar as extensões [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) e [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 
