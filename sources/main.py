@@ -11,13 +11,18 @@ pg.display.set_caption(Settings.TITLE)
 screen = pg.display.set_mode((Settings.windowSizeX, Settings.windowSizeY))
 clock = pg.time.Clock()
 
-graph = Graph.Graph()
-(start, end) = CreateGraph.nodes(graph)
-CreateEdges.edges(graph, start, end)
 pg.font.init()
 myfont = pg.font.SysFont('Comic Sans MS', 30)
 
+graph = Graph.Graph()
+(start, end) = CreateGraph.nodes(graph)
+
+CreateEdges.edges(graph, start, end)
 distance = graph.dijkstra_end(start, end)
+while distance == inf:
+    CreateEdges.edges(graph, start, end)
+    distance = graph.dijkstra_end(start, end)
+
 print("distancia", distance)
 
 while True:
