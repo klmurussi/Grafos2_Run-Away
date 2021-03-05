@@ -1,7 +1,7 @@
 import pygame as pg
 import sys
 from tools import Images, Settings, Sprites, CreateGraph, CreateEdges
-from classes import Graph
+from classes import Graph, InputBox
 from math import inf
 
 pg.init()
@@ -25,6 +25,9 @@ while distance == inf:
 
 print("distancia", distance)
 
+input_box1 = InputBox.InputBox(0, 550, 140, 32)
+input_boxes = [input_box1]
+done = False
 while True:
     screen.fill(Settings.WHITE)
     x = 0
@@ -66,10 +69,19 @@ while True:
 
     Sprites.all_sprites_list.draw(screen)
 
-    pg.display.update()
     for event in pg.event.get():
         if event.type == pg.QUIT:
             pg.quit()
             sys.exit()
+        for box in input_boxes:
+            box.handle_event(event, distance, screen)
 
-# Background.createBackground()
+
+    for box in input_boxes:
+        box.update()
+
+    #screen.fill((30, 30, 30))
+    for box in input_boxes:
+        box.draw(screen)
+
+    pg.display.update()
