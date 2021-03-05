@@ -10,7 +10,17 @@
 | Kathlyn Lara Murussi | @klmurussi | 18/0042378 |
 | Júlio César Schneider Martins | @jschneiderm98 | 16/0032903 |
 
-## Screenshots:
+## Screenshots
 
+Imagem padrão do jogo:
 
+![Screenshot do jogo](images/game.png)
+
+Imagem do usuário adivinhando a distância:
+
+![Screenshot da interação do usuário](images/writing.png)
+
+Imagem do usuário ganhando o jogo:
+
+![Screenshot do fim do jogo](images/end.png)
 

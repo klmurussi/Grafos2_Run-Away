@@ -8,6 +8,10 @@ theme:
     primary: purple
     accent: purple
 
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
 extra_css:
   - stylesheets/extra.css
 
