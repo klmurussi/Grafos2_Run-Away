@@ -1,10 +1,11 @@
-import pygame as pg 
+import pygame as pg
 
 pg.font.init()
 
 COLOR_INACTIVE = pg.Color('lightskyblue3')
 COLOR_ACTIVE = pg.Color('dodgerblue2')
 FONT = pg.font.Font(None, 32)
+
 
 class InputBox:
 
@@ -29,24 +30,15 @@ class InputBox:
             if self.active:
                 if event.key == pg.K_RETURN:
                     if (str(distance) == self.text):
-                        while(1):
-                            #print ("acertou mizeravi")
-                            screen.fill((0,0,0))
-                            text = FONT.render("YOU WIN. PRESS ENTER TO EXIT", True, (255,255,255))
-                            screen.blit(text, (220, 280))
-                            pg.display.update()
-                            for event in pg.event.get():
-                                if event.type == pg.KEYDOWN:
-                                    print ("a")
-                                    pg.quit()
-                    print(self.text)
+                        return True
                     self.text = ''
                 elif event.key == pg.K_BACKSPACE:
                     self.text = self.text[:-1]
                 else:
                     self.text += event.unicode
                 # Re-render the text.
-                self.txt_surface = FONT.render(self.text, True, (0,0,0))
+                self.txt_surface = FONT.render(self.text, True, (0, 0, 0))
+        return False
 
     def update(self):
         # Resize the box if the text is too long.

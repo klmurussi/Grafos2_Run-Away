@@ -1,6 +1,6 @@
 import pygame as pg
 import sys
-from tools import Images, Settings, Sprites, CreateGraph, CreateEdges
+from tools import Images, Settings, Sprites, CreateGraph, CreateEdges, end_game
 from classes import Graph, InputBox
 from math import inf
 
@@ -13,19 +13,22 @@ clock = pg.time.Clock()
 
 pg.font.init()
 myfont = pg.font.SysFont('Comic Sans MS', 30)
-
+guide_font = pg.font.SysFont('Comic Sans MS', 22)
 graph = Graph.Graph()
 (start, end) = CreateGraph.nodes(graph)
 
 CreateEdges.edges(graph, start, end)
 distance = graph.dijkstra_end(start, end)
-while distance == inf:
+
+while distance is None:
     CreateEdges.edges(graph, start, end)
     distance = graph.dijkstra_end(start, end)
 
-print("distancia", distance)
 
-input_box1 = InputBox.InputBox(0, 550, 140, 32)
+# para "roubar" descomente a linha abaixo
+# print("distancia", distance)
+
+input_box1 = InputBox.InputBox(0, 560, 140, 32)
 input_boxes = [input_box1]
 done = False
 while True:
@@ -67,6 +70,9 @@ while True:
         posY = ((yMaior - yMenor)/2) + yMenor
         screen.blit(textsurface, (posX, posY))
 
+    guideText = guide_font.render(
+        "Digite o menor caminho até a cidade", False, (0, 0, 0))
+    screen.blit(guideText, (0, 545))
     Sprites.all_sprites_list.draw(screen)
 
     for event in pg.event.get():
@@ -74,8 +80,9 @@ while True:
             pg.quit()
             sys.exit()
         for box in input_boxes:
-            box.handle_event(event, distance, screen)
-
+            end = box.handle_event(event, distance, screen)
+            if end:
+                end_game.end_game(screen)
 
     for box in input_boxes:
         box.update()
