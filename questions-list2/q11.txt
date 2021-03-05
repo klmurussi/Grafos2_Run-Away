@@ -1,0 +1,2 @@
+Q11) Sim, porém temos que seguir uma série de passos para que não tenha duas arestas com mesmo peso/custo.
+Nomeie arbitariamente as arestas como e1, e2, ..., em com a propriedade de que em-n+1, ..., em pertençam a T. Seja k a dirença mínima entre dois pesos de arestas não iguais; subtraia k1/n³ do peso da aresta i. Agora todos os pesos são diferentes e ordem de classificação é a mesma da dos pesos originais. T agora é a árvore geradora mínima de G e será retormada pelo algoritmo de Kruskall.
