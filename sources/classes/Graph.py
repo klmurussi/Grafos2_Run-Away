@@ -46,6 +46,8 @@ class Graph:
                     distance[nextVert] = newDist
                     pq.decreaseKey(nextVert, newDist)
                     pq.add((newDist, nextVert))
+        if not visited[end]:
+            return None
         return distance[end]
 
 
