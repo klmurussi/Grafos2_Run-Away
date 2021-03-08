@@ -4,17 +4,13 @@
 **Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| 16/0032903  |  Júlio César Schneider Martins |
-| 18/0042378  |  Kathlyn Lara Murussi |
 
-## Sobre 
-O projeto visa criar um mapa aleatório e o jogador deve achar o menor caminho de A pra B. 
+| Matrícula  | Aluno                         |
+| ---------- | ----------------------------- |
+| 16/0032903 | Júlio César Schneider Martins |
+| 18/0042378 | Kathlyn Lara Murussi          |
 
-## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+## Sobre
 
-
-
+Acesse os documentos do projeto, questões da lista e vídeo [aqui](https://projeto-de-algoritmos.github.io/Grafos2_Run-Away/)
 

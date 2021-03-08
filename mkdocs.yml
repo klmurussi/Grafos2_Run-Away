@@ -2,6 +2,8 @@ site_name: "Run Away"
 theme:
   name: material
   language: pt
+  logo: images/icon.png
+  favicon: images/icon.png
   features:
     - navigation.instant
   palette:
@@ -18,4 +20,7 @@ extra_css:
 nav:
   - Início: index.md
   - Ambiete de desenvolvimento: ambiente.md
-  - Algoritmo gerador de árvore: gerador.md
+  - Algoritmo do jogo: code.md
+  - Questões da lista:
+      - Questão 11: questoes/q11.md
+      - Questão 18: questoes/q18.md

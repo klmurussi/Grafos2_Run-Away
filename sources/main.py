@@ -14,6 +14,8 @@ clock = pg.time.Clock()
 pg.font.init()
 myfont = pg.font.SysFont('Comic Sans MS', 30)
 guide_font = pg.font.SysFont('Comic Sans MS', 22)
+
+
 graph = Graph.Graph()
 (start, end) = CreateGraph.nodes(graph)
 
@@ -26,7 +28,7 @@ while distance is None:
 
 
 # para "roubar" descomente a linha abaixo
-# print("distancia", distance)
+print("distancia", distance)
 
 input_box1 = InputBox.InputBox(0, 560, 140, 32)
 input_boxes = [input_box1]
